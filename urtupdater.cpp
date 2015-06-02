@@ -1036,10 +1036,19 @@ void UrTUpdater::openLicencePage(){
     dialog->setMinimumWidth(600);
     dialog->setMinimumHeight(500);
 
+    QLabel *dialogtxt = new QLabel(this);
+    dialogtxt->move(5, 5);
+    dialogtxt->setParent(dialog);
+    dialogtxt->setMinimumWidth(450);
+    dialogtxt->setText("Please read the license carefully. \nTo continue the installation of Urban Terror you have to click on \"Accept\".");
+    dialogtxt->setStyleSheet("font-weight: bold;");
+    dialogtxt->show();
+
     QTextEdit* txt = new QTextEdit(this);
     txt->setText(licenceText);
+    txt->move(0, 45);
     txt->setMinimumWidth(600);
-    txt->setMinimumHeight(450);
+    txt->setMinimumHeight(405);
     txt->setParent(dialog);
     txt->setReadOnly(true);
     txt->show();
